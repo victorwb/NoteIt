@@ -1,30 +1,31 @@
-import { TextInput, ScrollView } from "react-native";
-import {Text , React } from 'react';
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 
-const TextEditor = () => {
-    return (
-    <ScrollView>
-        <Text>Some text</Text>
-        <View>
-        <Text>Some more text</Text>
-        <Image
-            source={{
-            uri: 'https://reactnative.dev/docs/assets/p_cat2.png',
-            }}
-            style={{ width: 200, height: 200 }}
-        />
-        </View>
-        <TextInput
-        style={{
-            height: 40,
-            borderColor: 'gray',
-            borderWidth: 1
-        }}
-        defaultValue="You can type in me"
-        />
-    </ScrollView>
-    );
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>Hello Friend</Text>
+
+      <Image style={styles.img} source={{uri:'https://randomuser.me/api/portraits/men/1.jpg'}} />
+    </View>
+  );
 }
 
-export default TextEditor;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: {
+    color: 'blue',
+  },
+  img: {
+    width: 100,
+    height: 100,
+    borderRadius: 100/2,
+  },
+});
